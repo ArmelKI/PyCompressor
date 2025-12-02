@@ -5,12 +5,27 @@ class PyCompressorApp(ctk.CTk):
         super().__init__()
 
         # Set window title
-        self.title("PyCompressor")
-        self.geometry("700x500")#length x height
+        self.title("PyCompressor - Online File Compressor")
+        self.geometry("800x600")#length x height
         #theme settings
         ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
-        ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
+        self.grid_columnconfigure(0, weight=1)# Make the first column expandable
+        self.grid_rowconfigure(0, weight=1)# Make the first row take all extra space
 
-        # Verification label
-        self.label = ctk.CTkLabel(master=self, text="PyCompressor is running!", font=("Arial", 20))# Set font size to 20
-        self.label.pack(pady=20)# Add some vertical padding
+        #========== ZONE 1:  IMPORTATION ==========#
+        
+        self.frame_import = ctk.CTkFrame(self)
+        self.frame_import.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
+        #Title of the zone
+        self.label_import = ctk.CTkLabel(master=self.frame_import, text="Files to import", font=("Arial", 16,"bold"))# Set font size to 16 and bold for the title
+        self.label_import.pack(pady=10)# Add some vertical padding
+
+        #File list area (scrollable)
+        self.scroll_files = ctk.CTkScrollableFrame(self.frame_import, label_text="List empty")# Create a scrollable frame with a label
+        self.scroll_files.pack(fill="both", expand=True, padx=10, pady=10)# Fill both directions and expand
+
+        #Add file button
+        self.button_add_file = ctk.CTkButton(self.frame_import, text="+Add File", width=200)
+        self.button_add_file.pack(pady=10)# Add some vertical padding
+
+        #========== END ZONE 1 ==========#
