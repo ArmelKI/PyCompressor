@@ -48,3 +48,24 @@ class PyCompressorApp(ctk.CTk):
         self.check_resize.grid(row=0, column=2, padx=20, pady=20)# Padding around the checkbox
 
         #========== END ZONE 2 ==========#
+
+        #========== ZONE 3:  ACTION BUTTONS ==========#
+
+        self.frame_actions = ctk.CTkFrame(self, fg_color="transparent")# Transparent frame to blend with background
+        self.frame_actions.grid(row=2, column=0, sticky="ew", padx=20, pady=10)#Stick to east and west
+
+        #Progress bar
+        self.progress_bar = ctk.CTkProgressBar(self.frame_actions)
+        self.progress_bar.set(0)# Initialize at 0%
+        self.progress_bar.pack(fill="x", pady=(0,10))# Fill horizontally with bottom padding
+
+        #Compress button
+        self.button_compress = ctk.CTkButton(self.frame_actions, text="START COMPRESSION", height=50, font=("Arial", 16, "bold"), fg_color="#4CAF50", hover_color="#45A049")# Green button with hover effect
+        self.button_compress.pack(fill="x")# Fill horizontally
+
+        #Status label
+        self.label_status = ctk.CTkLabel(self.frame_actions, text="Ready")# Status label
+        self.label_status.pack(pady=10)# Add some vertical padding
+
+        #========== END ZONE 3 ==========#
+
