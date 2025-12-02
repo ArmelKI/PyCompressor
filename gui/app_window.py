@@ -60,7 +60,7 @@ class PyCompressorApp(ctk.CTk):
         self.progress_bar.pack(fill="x", pady=(0,10))# Fill horizontally with bottom padding
 
         #Compress button
-        self.button_compress = ctk.CTkButton(self.frame_actions, text="START COMPRESSION", height=50, font=("Arial", 16, "bold"), fg_color="#4CAF50", hover_color="#45A049")# Green button with hover effect
+        self.button_compress = ctk.CTkButton(self.frame_actions, text="START COMPRESSION", height=50, font=("Arial", 16, "bold"), fg_color="#2A2DC2FF", hover_color="#2A2DC2FF")# Blue button with hover effect
         self.button_compress.pack(fill="x")# Fill horizontally
 
         #Status label
