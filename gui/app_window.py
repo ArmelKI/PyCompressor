@@ -13,7 +13,7 @@ class PyCompressorApp(ctk.CTk):
         self.grid_rowconfigure(0, weight=1)# Make the first row take all extra space
 
         #========== ZONE 1:  IMPORTATION ==========#
-        
+
         self.frame_import = ctk.CTkFrame(self)
         self.frame_import.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
         #Title of the zone
@@ -29,3 +29,22 @@ class PyCompressorApp(ctk.CTk):
         self.button_add_file.pack(pady=10)# Add some vertical padding
 
         #========== END ZONE 1 ==========#
+
+        #========== ZONE 2:  COMPRESSOR SETTINGS ==========#
+
+        self.frame_settings = ctk.CTkFrame(self)
+        self.frame_settings.grid(row=1, column=0, sticky="ew", padx=20, pady=10)#Stick to east and west
+
+        #Slider for compression level
+        self.label_quality = ctk.CTkLabel(self.frame_settings, text="Quality Level:80%")# Label for the slider
+        self.label_quality.grid(row=0, column=0, padx=20, pady=20)# Padding around the label
+        self.slider_quality = ctk.CTkSlider(self.frame_settings, from_=0, to=100, number_of_steps=90, width=300)# Slider widget
+        self.slider_quality.set(80)# Default value at 80%
+        self.slider_quality.grid(row=0, column=1, padx=10, pady=20, sticky="ew")# Padding and stick to east and west
+        self.frame_settings.grid_columnconfigure(1, weight=1)# Make the slider column expandable
+
+        #Checkbox for resizing images
+        self.check_resize = ctk.CTkCheckBox(self.frame_settings, text="Resize Images to 1920px")# Checkbox widget
+        self.check_resize.grid(row=0, column=2, padx=20, pady=20)# Padding around the checkbox
+
+        #========== END ZONE 2 ==========#
