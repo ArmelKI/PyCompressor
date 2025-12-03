@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-def compress_image(input_path: str, output_path: str, quality:int =80, max_width: int =1920) -> bool:
+def compress_image(input_path: str, output_path: str, quality:int =80, max_width: int | None =1920) -> bool:
     """Compress an image and optionally resize it to a maximum width.
     Args:
         input_path (str): The path to the input image.
