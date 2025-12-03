@@ -1,6 +1,6 @@
 import os
 
-def get_uique_output_path(input_path, suffix="_compressed"):
+def get_unique_output_path(input_path, suffix="_compressed"):
     """
     Generate a unique output file path by appending a suffix before the file extension.
     
@@ -22,7 +22,7 @@ def get_uique_output_path(input_path, suffix="_compressed"):
         counter += 1 # Increment counter
     return outpout_path 
 
-def get_size_in_mb(file_path: str) -> float:
+def get_size_mb(file_path: str) -> float:
     """
     Get the size of a file in megabytes (MB).
     
